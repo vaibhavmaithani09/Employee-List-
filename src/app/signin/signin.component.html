@@ -1,0 +1,18 @@
+<div>
+    <h3>ADD EMPLOYEE</h3>
+    <form [formGroup]="addform" (ngSubmit)="addstudent()">    
+        <br>   <br>
+        <input type="text"  name="name" placeholder="Enter Your Name"  formControlName="name">
+        <br>   <br>
+       <div style="color:red" *ngIf="addform.get('name')?.invalid&&addform.get('name')?.touched">Name is  invalid</div>
+        <input type="text"   name="email" placeholder="Enter Your Email" formControlName="email">
+        <br>   <br>
+        <div style="color:red" *ngIf="addform.get('email')?.invalid&&addform.get('email')?.touched">Email is not valid</div>        
+        <input type="number"  name="phone" placeholder="Enter Your Phone" formControlName="phone">
+        <br>   <br>
+        <div style="color:red" *ngIf="addform.get('phone')?.invalid&&addform.get('phone')?.touched">Phone is not valid</div>
+        <br>   <br>
+       <button type="submit" [disabled]="addform.invalid">SUBMIT</button>       
+    </form>
+
+

@@ -1,0 +1,17 @@
+<div>
+    <h3>edit student</h3>
+    <form [formGroup]="updateform" (ngSubmit)="updatestudent()">        
+        <br>   <br>
+        <input type="text"  name="name" placeholder="Enter Your Name"  formControlName="name">
+        <br>   <br>
+        <div style="color:red" *ngIf="updateform.get('name')?.invalid&&updateform.get('name')?.touched">Name is not valid</div>
+        <input type="text"   name="email" placeholder="Enter Your Email" formControlName="email">
+        <br>   <br>
+        <div  style="color:red" *ngIf="updateform.get('email')?.invalid&&updateform.get('email')?.touched">Email is not valid</div>
+        <input type="number"  name="phone" placeholder="Enter Your Phone" formControlName="phone">
+        <br>   <br>
+        <div  style="color:red" *ngIf="updateform.get('phone')?.invalid&&updateform.get('phone')?.touched">Phone is not valid</div>
+        <br>   <br>
+       <button type="submit" [disabled]="updateform.invalid">SUBMIT</button>   
+    </form>
+</div>

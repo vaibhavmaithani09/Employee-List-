@@ -1,0 +1,36 @@
+<h1>EMPLOYEES</h1>
+<br> <br> <br>
+<a routerLink="employee/signin">ADD EMPLOYEE</a>
+<div *ngIf="data">
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <br>   <br>       <br>
+      <th>Name</th>
+      <br>   <br><br>
+      <th>Email</th>
+      <br>   <br>   <br>
+      <th>Phone Number</th>
+    
+     
+    
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let e of data">
+      <td>{{ e.id }}</td>
+      <br>   <br>        <br>
+      <td>{{ e.name }}</td>
+      <br>   <br>      <br>
+      <td>{{ e.email }}</td>
+      <br>   <br>  <br>
+      <td>{{ e.phone }}</td>
+      <td>
+        <a routerLink="/employee/{{ e.id }}">edit</a>
+        <button (click)="delete(e.id)">DELETE</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
